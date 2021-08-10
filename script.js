@@ -63,3 +63,31 @@ const changeManufacturer = (el) => {
     newData = `http://любой_домен/filter?${s}${c}${m}`;
     console.log(newData);
 };
+
+// 3 task 
+const requestUrl = 'https://jsonplaceholder.typicode.com/users';
+function sendRequest(metod, url, body = null) {
+    return new Promise ((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.open(metod, url);
+        xhr.responseType = 'json';
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onload = () => resolve(xhr.response);
+        xhr.onerror = () => reject(xhr.response);
+        xhr.send(JSON.stringify(body));
+    }).then(data => console.log(data))
+    .catch(error => console.log(error));
+};
+const newUser = {
+    name: 'Olga',
+    age: 27,
+    gender: 'female'
+};
+async function answer () {
+    await sendRequest('GET', requestUrl);
+    await sendRequest('POST', requestUrl, newUser);
+    let answerText = 'Оба ответа получены';
+    document.querySelector('.task3-answer').innerHTML = answerText;
+    console.log(answerText)
+}
+answer();

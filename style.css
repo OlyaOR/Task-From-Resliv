@@ -29,3 +29,7 @@ h1 {
 .inputs {
     display: flex;
 }
+.task3-answer, .task4-answer {
+    padding-top: 20px;
+    color:teal;
+}

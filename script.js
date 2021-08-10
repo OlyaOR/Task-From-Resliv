@@ -75,7 +75,7 @@ function sendRequest(metod, url, body = null) {
         xhr.onload = () => resolve(xhr.response);
         xhr.onerror = () => reject(xhr.response);
         xhr.send(JSON.stringify(body));
-    }).then(data => console.log(data))
+    }).then(data => data)
     .catch(error => console.log(error));
 };
 const newUser = {

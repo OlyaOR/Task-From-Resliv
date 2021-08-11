@@ -4,14 +4,15 @@
 }
 .container {
     width: 800px;
+    min-height: 100vh;
     margin: 0 auto;
-    padding: 30px 20px;
+    padding: 30px;
+    padding-bottom: 0px;
     background-color: #EBF8F8;
 }
 h1 {
     text-align: center;
     font-family: 'Abril Fatface', cursive;
-    
     color:teal;
 }
 .title_h2 {
@@ -35,4 +36,52 @@ h1 {
 }
 a.color {
     padding: 0;
+}
+h3 {
+    color:teal;
+    text-align: center;
+}
+.domainone {
+    margin-top: 15px;
+    display: flex; 
+    justify-content: space-between;
+}
+.domaintwo {
+    width: 245px;
+    padding: 15px 0;
+    background-color: rgba(94, 195, 253, 0.5);
+}
+.domainonebtn {
+    display: flex; 
+    flex-direction: column;
+}
+.btn {
+    width: 100px;
+    height: 30px;
+    color:#fff;
+    border: solid 1px teal;
+    border-radius: 5px;
+    padding: 5px  0;
+    background: teal;
+    margin-bottom: 6px;
+}
+.btn:last-child {
+    margin-bottom: 0px;
+}
+.btn:hover {
+    color:teal;
+    background: #fff;
+}
+.domainone-input {
+    display: flex; 
+    flex-direction: column;
+    align-content:space-around;
+    color:teal;
+    font-size: 18px;
+    text-align: center;
+    line-height: 1;
+}
+.domainone-input input {
+    color:teal;
+    margin-top: 3px;
 }

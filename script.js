@@ -91,3 +91,30 @@ async function answer () {
     console.log(answerText)
 }
 answer();
+
+// 4, 5 task 
+const iframe = document.querySelector('#iframe');
+const inputKey = document.querySelector('#key');
+const inputValue = document.querySelector('#value');
+const setBtn = document.querySelector('#write');
+const getBtn = document.querySelector('#read');
+const deleteBtn = document.querySelector('#remove');
+
+const post = (method, key = inputKey.value, value = inputValue.value) => {
+    const data = JSON.stringify({ method, key, value });
+    iframe.contentWindow.postMessage(data, '*');
+};
+setBtn.addEventListener('click', () => {
+    post('set');
+});
+getBtn.addEventListener('click', () => {
+    post('get');
+});
+deleteBtn.addEventListener('click', () => {
+    post('delete');
+});
+window.onmessage = ({ data }) => {
+    if (data.includes('callback')) {
+      console.log(`${data}`);
+    }
+};
